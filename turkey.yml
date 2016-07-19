@@ -1,0 +1,11 @@
+---
+- name: Thanksgiving Servers
+  clc_server:
+    name: tday
+    template: ubuntu-14-64
+    count: 2
+    cpu: 1
+    memory: 2
+    group: 'Default Group'
+    state: present
+    ttl: 345600
