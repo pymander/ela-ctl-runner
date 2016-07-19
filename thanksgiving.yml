@@ -13,6 +13,10 @@
         memory: 2
         group: Runner
         state: present
+        add_public_ip: true
+        public_ip_ports:
+          - 22
+          - 80
         ttl: 345600
       register: clc
     - name: debug
