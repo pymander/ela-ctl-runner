@@ -11,9 +11,9 @@
         count: 2
         cpu: 1
         memory: 2
-        group: 'Default Group'
+        group: Runner
         state: present
         ttl: 345600
       register: clc
     - name: debug
-        debug: var=clc.server_ids
+      debug: var=clc.server_ids
