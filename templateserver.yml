@@ -7,7 +7,7 @@
     - name: Deploy template server
       clc_server:
         name: tse
-        template: Development
+        template: VA1TCDSML03
         count: 1
         cpu: 1
         memory: 1
