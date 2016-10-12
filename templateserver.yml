@@ -4,9 +4,9 @@
   gather_facts: False
   connection: local
   tasks:
-    - name: Deploy template server
+    - name: Deploy IDE server
       clc_server:
-        name: tse
+        name: ide
         template: VA1TCDSML03
         count: 1
         cpu: 1
@@ -17,6 +17,22 @@
         public_ip_ports:
           - 22
           - 80
+        ttl: 604800
+      register: clc
+    - name: Deploy MongoDB server
+      clc_server:
+        name: mgo
+        template: VA1TCDSML04
+        count: 1
+        cpu: 1
+        memory: 1
+        group: Runner
+        state: present
+        add_public_ip: true
+        public_ip_ports:
+          - 22
+          - 80
+          - 27017
         ttl: 604800
       register: clc
     - name: debug
